@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    include 'database.php' ;
+    $database = new database();
+    ?>
     <meta charset="UTF-8">
     <title>Music</title>
     <link rel="stylesheet" href="CSS%20User%20Interface.css">
@@ -9,6 +13,11 @@
 <body>
 <?php
 include 'nav.php' ;
+
+    $result = database::execute("SELECT * FROM users");
+    echo "<pre>";
+    print_r($result);
+    echo "</pre>";
 ?>
 <h1>Music Forum </h1>
 <div class="headtitle">
